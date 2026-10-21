@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería Santa Rosa | Pan caliente todos los días</title>
+  <style>
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --cafe: #5C3A00;      
+  --amarillo: #FDB913;  
+  --crema: #FFF8E7;     
+  --texto: #2B2118;     
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--crema);
+}
+
+img {
+  max-width: 100%;   /* nunca más ancha que su contenedor */
+  height: auto;
+  display: block;
+}
+
+main, footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+h1, h2, h3 {
+  color: var(--cafe);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+
+.precio {
+  display: inline-block;
+  background: var(--amarillo);
+  color: #161616;
+  font-weight: bold;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--cafe);
+  color: var(--crema);
+}
+
+header p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: var(--crema);
+  text-decoration: none;
+  border: 2px solid var(--crema);
+  border-radius: 999px;
+}
+
+nav a:hover {
+  background: var(--amarillo);
+  color: #161616;
+}
+
+.catalogo {
+  display: grid;
+  gap: 1rem;
+}
+
+.producto {
+  background: #FFFFFF;
+  border: 2px solid #E3DECF;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.producto img {
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (min-width: 600px) {
+  .catalogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .catalogo {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #161616;
+  outline-offset: 2px;
+}
+
+header a:focus-visible {
+  outline-color: var(--amarillo);
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 32rem;
+}
+
+fieldset {
+  display: grid;
+  gap: 0.5rem;
+  border: 2px solid #E3DECF;
+  border-radius: 8px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, select, textarea, button {
+  font: inherit;
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid var(--cafe);
+  border-radius: 6px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+button {
+  min-height: 44px;
+  background: var(--cafe);
+  color: var(--crema);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+html { scroll-behavior: smooth; }
+section[id], footer[id] { scroll-margin-top: 1rem; }
+.pedidos { border-top: 4px solid var(--amarillo); margin-top: 2rem; padding-top: 1rem; }
+.campos { display: grid; gap: 0.75rem; }
+@media (min-width: 1000px) { form { max-width: none; } .campos { grid-template-columns: repeat(2, 1fr); align-items: start; } }
+.catalogo-lista { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+.catalogo-lista li { background: #fff; border: 2px solid #E3DECF; border-radius: 8px; padding: 0.6rem 0.9rem; }
+.fotos { display: grid; gap: 1rem; margin-top: 1rem; }
+@media (min-width: 600px) { .fotos { grid-template-columns: repeat(2, 1fr); } }
+figure { margin: 0; background: #fff; border: 2px solid #E3DECF; border-radius: 12px; padding: 1rem; }
+figcaption { margin-top: 0.5rem; }
+figure img { border-radius: 8px; }
+video, iframe { width: 100%; border: 0; border-radius: 8px; background: #161616; }
+iframe { height: 18rem; border: 2px solid #E3DECF; }
+address { font-style: normal; }
+footer { border-top: 4px solid var(--amarillo); }
+.consentimiento { display: flex; gap: 0.5rem; align-items: flex-start; }
+.consentimiento input { margin-top: 0.3rem; flex: none; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  </style>
+</head>
+<body>
+  <header>
+    <p><strong>Panadería Santa Rosa</strong></p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#pedidos">Pedidos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h1>Pan caliente desde 1987</h1>
+      <p>Somos una panadería familiar. Horneamos cada madrugada con recetas de tres generaciones.</p>
+
+      <!-- Reto: video sin autoplay, con controles y texto alternativo -->
+      <video controls preload="none" width="640" aria-describedby="desc-video">
+        <source src="data:video/mp4;base64,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" type="video/mp4">
+        <track kind="descriptions" label="Descripción" srclang="es">
+        Tu navegador no puede reproducir este video.
+      </video>
+      <p id="desc-video">Texto alternativo del video: el horno de la panadería abierto de madrugada, con bandejas de pan de yema doradas saliendo calientes. (Video de ejemplo de 3 segundos y unos 3 KB; el real sería de 15 a 20 s en 480p, de unos 2 MB, para no gastar los datos prepago de la señora Marta.)</p>
+    </section>
+
+    <section id="productos">
+      <h2>Nuestros productos</h2>
+      <ul class="catalogo-lista">
+        <li>Pan francés: <span class="precio">S/ 0.30</span> la unidad</li>
+        <li>Pan de yema: <span class="precio">S/ 0.50</span> la unidad</li>
+        <li>Chancay: <span class="precio">S/ 0.60</span> la unidad</li>
+        <li>Torta de chocolate: <span class="precio">S/ 45.00</span> (entera)</li>
+      </ul>
+      <p><strong>Pedidos de tortas con 24 horas de anticipación.</strong></p>
+
+      <div class="fotos">
+        <figure>
+          <img src="IMG/panyema.jpg"
+          <figcaption>Pan de yema, nuestro favorito de la casa.</figcaption>
+        </figure>
+        <figure>
+          <img src="IMG/torta.jpg" alt="">
+          <figcaption>Tortas por encargo para cumpleaños.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <main class="pedidos" id="pedidos">
+    <h2>Haz tu pedido</h2>
+    <p>Te confirmaremos por WhatsApp en menos de una hora.</p>
+
+    <form action="#">
+      <div class="campos">
+        <fieldset>
+          <legend>Tus datos</legend>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+
+          <label for="celular">Celular</label>
+          <input type="tel" id="celular" name="celular" autocomplete="tel" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tu pedido</legend>
+          <label for="producto">Producto</label>
+          <select id="producto" name="producto" required>
+            <option value="">Elige un producto</option>
+            <option>Pan francés</option>
+            <option>Pan de yema</option>
+            <option>Chancay</option>
+            <option>Torta de chocolate</option>
+          </select>
+
+          <label for="cantidad">Cantidad</label>
+          <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+
+          <label for="fecha">Fecha de recojo</label>
+          <input type="date" id="fecha" name="fecha" required>
+
+          <label for="notas">Indicaciones (opcional)</label>
+          <textarea id="notas" name="notas" rows="3"></textarea>
+        </fieldset>
+      </div>
+
+      <div class="consentimiento">
+        <input type="checkbox" id="consentimiento" name="consentimiento" required>
+        <label for="consentimiento">Autorizo que usen mis datos solo para atender este pedido.</label>
+      </div>
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+  </main>
+
+  <footer id="contacto">
+    <h2>Visítanos</h2>
+    <address>
+      Av. Los Panaderos 123, [distrito]<br>
+      Celular: <a href="tel:+51900000000">900 000 000</a>
+    </address>
+    <p>Lunes a sábado de 6:00 a 21:00 · Domingos de 6:00 a 13:00</p>
+    <iframe title="Mapa de ubicación de la Panadería Santa Rosa en Lima" loading="lazy"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-77.06%2C-12.08%2C-77.02%2C-12.05&amp;layer=mapnik"></iframe>
+  </footer>
+</body>
+</html>
