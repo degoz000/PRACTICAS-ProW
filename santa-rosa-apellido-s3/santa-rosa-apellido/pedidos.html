@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedidos · Panadería Santa Rosa</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Panadería Santa Rosa</h1>
+    <nav><a href="index.html">Inicio</a> · <a href="pedidos.html">Pedidos</a></nav>
+  </header>
+
+  <main>
+    <h2>Haz tu pedido</h2>
+
+    <form action="#" novalidate>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required aria-describedby="error-nombre">
+      <p class="error" id="error-nombre"></p>
+
+      <label for="celular">Celular</label>
+      <input type="tel" id="celular" name="celular" required aria-describedby="error-celular">
+      <p class="error" id="error-celular"></p>
+
+      <label for="producto">Producto</label>
+      <select id="producto" name="producto" required aria-describedby="error-producto">
+        <option value="">-- Elige un producto --</option>
+        <option value="Pan de yema">Pan de yema</option>
+        <option value="Pan francés">Pan francés</option>
+        <option value="Empanada">Empanada</option>
+        <option value="Torta de chocolate">Torta de chocolate</option>
+      </select>
+      <p class="error" id="error-producto"></p>
+
+      <label for="cantidad">Cantidad</label>
+      <input type="number" id="cantidad" name="cantidad" required aria-describedby="error-cantidad">
+      <p class="error" id="error-cantidad"></p>
+
+      <label for="fecha">Fecha de recojo</label>
+      <input type="date" id="fecha" name="fecha" required aria-describedby="error-fecha">
+      <p class="error" id="error-fecha"></p>
+
+      <label for="indicaciones">Indicaciones (opcional)</label>
+      <textarea id="indicaciones" name="indicaciones" rows="3" maxlength="200" aria-describedby="contador"></textarea>
+      <p id="contador" class="contador">Te quedan 200 caracteres</p>
+
+      <p class="check">
+        <input type="checkbox" id="consentimiento" name="consentimiento" required aria-describedby="error-consentimiento">
+        <label for="consentimiento">Autorizo que Panadería Santa Rosa use mi nombre y celular solo para atender este pedido.</label>
+      </p>
+      <p class="error" id="error-consentimiento"></p>
+
+      <div id="estado" role="status"></div>
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+  </main>
+</body>
+</html>
