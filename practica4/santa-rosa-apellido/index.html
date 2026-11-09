@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panadería Santa Rosa</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/pedido.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Panadería Santa Rosa</h1>
+    <nav><a href="index.html">Inicio</a> · <a href="pedidos.html">Pedidos</a></nav>
+  </header>
+
+  <main>
+    <h2>Nuestro catálogo</h2>
+    <p>Pan artesanal horneado cada mañana.</p>
+
+    <section class="catalogo" aria-label="Catálogo de productos">
+      <article class="producto" data-nombre="Pan de yema" data-precio="0.50">
+        <img src="img/pan-yema.svg" alt="Canasta de panes de yema dorados recién horneados">
+        <h3>Pan de yema</h3>
+        <p><span class="precio">S/ 0.50</span> la unidad</p>
+        <button type="button" class="btn-anadir">Añadir</button>
+      </article>
+
+      <article class="producto" data-nombre="Pan chancay" data-precio="0.80">
+        <img src="img/pan-chancay.svg" alt="Pan chancay grande de corteza suave">
+        <h3>Pan chancay</h3>
+        <p><span class="precio">S/ 0.80</span> la unidad</p>
+        <button type="button" class="btn-anadir">Añadir</button>
+      </article>
+
+      <article class="producto" data-nombre="Empanada" data-precio="3.50">
+        <img src="img/empanada.svg" alt="Empanada horneada y dorada">
+        <h3>Empanada</h3>
+        <p><span class="precio">S/ 3.50</span> la unidad</p>
+        <button type="button" class="btn-anadir">Añadir</button>
+      </article>
+
+      <article class="producto" data-nombre="Torta de chocolate" data-precio="45.00">
+        <img src="img/torta.svg" alt="Torta de chocolate para ocho porciones">
+        <h3>Torta de chocolate</h3>
+        <p><span class="precio">S/ 45.00</span> la torta</p>
+        <button type="button" class="btn-anadir">Añadir</button>
+      </article>
+    </section>
+
+    <section id="mi-pedido" aria-labelledby="titulo-pedido">
+      <h2 id="titulo-pedido" tabindex="-1">Mi pedido</h2>
+      <p id="pedido-vacio">Tu pedido está vacío. Añade productos del catálogo.</p>
+      <ul id="lista-pedido"></ul>
+      <p class="total">Total: <strong id="total">S/ 0.00</strong></p>
+
+      <div id="sugerencia" hidden>
+        <p>¿Añadir mantequilla por S/ 2.50?</p>
+        <button type="button" id="btn-sugerencia">Sí, añadir mantequilla</button>
+      </div>
+
+      <button type="button" id="btn-vaciar" hidden>Vaciar pedido</button>
+      <p id="aviso" class="solo-lector" role="status"></p>
+    </section>
+  </main>
+</body>
+</html>

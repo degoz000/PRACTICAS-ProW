@@ -1,0 +1,58 @@
+ANÁLISIS ÉTICO · SEMANA 4 · Programación Web (UAIN1349P)
+Estudiante: [Apellidos y nombres]        Pareja del reto: [Apellidos y nombres]
+Sección: [__]                            Fecha: 09/11/2026
+
+1. Las tres propuestas del asesor
+
+a) Contador falso de "¡Solo quedan 2!" → ENGAÑOSA.
+   Muestra una escasez que no existe para apurar la compra. El cliente decide
+   con información falsa. Alternativa honesta: mostrar el stock real (por
+   ejemplo, "Quedan 2 tortas de hoy") solo cuando de verdad queden pocas, o
+   indicar "Horneamos por encargo: pide hasta las 6 p. m. para mañana".
+
+b) Sumar una gaseosa a cada pedido sin preguntar → ENGAÑOSA.
+   Cambia el pedido sin que el cliente lo sepa ni lo pida, y la persona paga
+   por algo que no eligió. Alternativa honesta: una sugerencia visible
+   ("¿Añadir una gaseosa por S/ 3.00?") con un botón que el cliente pulsa
+   si quiere, y un anuncio claro cuando se añada.
+
+c) Subir el precio al llegar al pago → ENGAÑOSA.
+   El cliente armó su pedido con un total y de pronto cambia (cargos ocultos).
+   Alternativa honesta: mostrar el precio final desde el inicio, con cualquier
+   costo adicional (por ejemplo, delivery) indicado antes de añadir al pedido.
+
+En las tres, el criterio es el mismo: la página es transparente si el cliente
+entiende qué cambia, por qué cambia y puede decidir; es engañosa si el cambio
+se oculta o se basa en información falsa para influir en su decisión.
+
+2. Diferencia entre mi sugerencia honesta y la gaseosa del asesor
+
+Mi sugerencia ("¿Añadir mantequilla por S/ 2.50?") se muestra como una pregunta
+con el precio visible, y no se añade nada hasta que el cliente pulsa el botón.
+Quien decide es el cliente, y el total no cambia sin su acción. En el caso de
+la gaseosa, el sitio decide por el cliente, modifica el pedido y el total sin
+avisar, y el cliente tendría que darse cuenta y quitarla. Una persuasiona (da
+información y deja decidir); la otra engaña (decide por la persona).
+
+3. ¿Por qué textContent y no innerHTML?
+
+textContent escribe el valor como texto plano: si un dato trae etiquetas
+HTML, se muestran tal cual y no se ejecutan. innerHTML interpreta el texto
+como HTML, así que si el dato viene del usuario (por ejemplo, un nombre o una
+indicación) podría incluir algo como <img src=x onerror="..."> y ejecutar
+código malicioso en el navegador de otra persona (ataque XSS). Aunque los
+nombres de mis productos vienen del catálogo, usar textContent es el hábito
+seguro: así el código sigue siendo seguro cuando los datos vengan del
+usuario o de un servidor en las semanas siguientes.
+
+4. Patrón oscuro en una tienda en línea real y cómo lo rediseñaría
+
+[Completa con un ejemplo que hayas visto tú. Sugerencia de ejemplo:]
+Un ejemplo común es la cuenta regresiva falsa de ofertas ("La oferta termina
+en 10:00 minutos") que se reinicia cada vez que se recarga la página. Genera
+urgencia artificial. Lo rediseñaría mostrando una fecha real de fin de la
+oferta ("Válido hasta el 15 de noviembre") que no cambie al recargar, y sin
+presionar con temporizadores. Otros patrones frecuentes: casillas de
+suscripción ya marcadas, o botones para cancelar suscripciones escondidos
+(se rediseñan con casillas desmarcadas y cancelación en el mismo número de
+pasos que la compra).
