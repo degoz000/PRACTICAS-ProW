@@ -1,0 +1,184 @@
+/* === 1. Base === */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --cafe: #5c3a00;
+    --amarillo: #fdb913;
+    --crema: #fff8e7;
+    --texto: #2b2118;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--texto);
+    background: var(--crema);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+main, footer{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* === 2 Tipografia === */
+
+h1,h2,h3{
+    color: var(--cafe);
+    line-height: 1.2;
+
+}
+
+h1{font-size: 2rem;}
+h2{font-size: 1.5rem; }
+
+.precio{
+    display: inline-block;
+    background: var(--amarillo);
+    color: #161616;
+    font-weight: bold;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* === 3 encabezado y menu ===*/
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--cafe);
+    color: var(--crema);
+}
+
+header p {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    color: var(--texto);
+    text-decoration: none;
+    border: 2px solid var(--cafe);
+    border-radius: 999px;
+}
+
+nav a:hover {
+    background: var(--amarillo);
+    color: #161616;
+}
+
+/* === 4. Catalogo === */
+.catalogo {
+    display: grid;
+    gap: 1rem;
+}
+
+.producto{
+    background: #ffffff;
+    border: 2px solid #e3decf;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.producto img {
+    border-radius: 8px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* === 5. Responsividad (mobile first) === */
+@media(min-width: 600px) {
+    .catalogo{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1000px) {
+    .catalogo{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+/* ==== 6. Accesibilidad ==== */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid #161616;
+    outline-offset: 2px;
+}
+
+header a:focus-visible{
+    outline-color: var(--amarillo);
+}
+
+/*FORMULARIO*/
+form{
+    display: grid;
+    gap: 0.75rem;
+    border: 2px solid #e3decf;
+    border-radius: 8px;
+}
+
+label{
+    font-weight: bold;
+}
+
+input,select,textarea,button{
+    font: inherit;
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid var(--cafe);
+    border-radius: 6px;
+}
+
+input[type="checkbox"]{
+    width: auto;
+}
+
+button{
+    min-height: 44px;
+    background: var(--cafe);
+    color: var(--crema);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*respeta quien desactive las animaciones */
+@media (prefers-reduced-motion: reduce){
+    * {
+        transition: none;
+        animation: none;
+
+    }
+}
