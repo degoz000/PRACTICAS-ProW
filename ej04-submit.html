@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejemplo 4: submit · Panadería Santa Rosa</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ej04.js" defer></script>
+</head>
+<body>
+  <h1>Ejemplo 4 · Validar antes de enviar</h1>
+  <form id="pedido" action="ej04-gracias.html" method="get" novalidate>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" autocomplete="name">
+
+    <label for="celular">Celular</label>
+    <input id="celular" name="celular" type="tel" inputmode="numeric"
+           autocomplete="tel" aria-describedby="error-celular">
+    <p class="error" id="error-celular"></p>
+
+    <button type="submit">Enviar pedido</button>
+  </form>
+</body>
+</html>

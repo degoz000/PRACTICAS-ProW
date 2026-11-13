@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejemplo 6: delegación · Panadería Santa Rosa</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ej06.js" defer></script>
+</head>
+<body>
+  <h1>Ejemplo 6 · Mi pedido con delegación</h1>
+  <section class="catalogo" aria-label="Catálogo">
+    <article class="producto" data-nombre="Pan de yema" data-precio="0.50">
+      <p>Pan de yema · S/ 0.50</p>
+      <button type="button" class="btn-anadir">
+        <span aria-hidden="true">+</span> Añadir
+      </button>
+    </article>
+    <article class="producto" data-nombre="Chancay" data-precio="0.60">
+      <p>Chancay · S/ 0.60</p>
+      <button type="button" class="btn-anadir">
+        <span aria-hidden="true">+</span> Añadir
+      </button>
+    </article>
+    <article class="producto" data-nombre="Torta de chocolate" data-precio="45">
+      <p>Torta de chocolate · S/ 45.00</p>
+      <button type="button" class="btn-anadir">
+        <span aria-hidden="true">+</span> Añadir
+      </button>
+    </article>
+  </section>
+
+  <section class="caja" aria-labelledby="titulo-pedido">
+    <h2 id="titulo-pedido" tabindex="-1">Mi pedido</h2>
+    <ul id="lista-pedido"></ul>
+    <p>Total: <strong id="total">S/ 0.00</strong></p>
+    <p id="aviso" role="status"></p>
+  </section>
+</body>
+</html>

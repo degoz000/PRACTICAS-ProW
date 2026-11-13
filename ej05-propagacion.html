@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejemplo 5: propagación · Panadería Santa Rosa</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/ej05.js" defer></script>
+</head>
+<body>
+  <h1>Ejemplo 5 · Un clic viaja por el DOM</h1>
+  <section id="catalogo" class="caja">
+    <p>section#catalogo</p>
+    <article id="producto" class="caja">
+      <p>article#producto · Pan de yema</p>
+      <button type="button" id="boton">Añadir</button>
+    </article>
+  </section>
+
+  <label><input type="checkbox" id="detener"> Detener en el artículo
+    (stopPropagation)</label>
+
+  <h2>Orden en que se ejecutan los oyentes</h2>
+  <ol id="registro"></ol>
+</body>
+</html>
